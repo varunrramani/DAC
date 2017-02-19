@@ -1,0 +1,13 @@
+﻿Build started 17-02-2017 19:38:10.
+     1>Project "D:\Varun\CPPAssignments\Structure\Structure\Structure.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>d:\varun\cppassignments\structure\structure\source.cpp(16): error C2057: expected constant expression
+     1>d:\varun\cppassignments\structure\structure\source.cpp(16): error C2466: cannot allocate an array of constant size 0
+     1>d:\varun\cppassignments\structure\structure\source.cpp(16): error C2133: 'book' : unknown size
+     1>Done Building Project "D:\Varun\CPPAssignments\Structure\Structure\Structure.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.70

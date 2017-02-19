@@ -1,0 +1,16 @@
+﻿Build started 17-02-2017 20:00:50.
+     1>Project "D:\Varun\CPPAssignments\Library\Client\ClientUsage\ClientUsage\ClientUsage.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Varun\CPPAssignments\Library\Client\ClientUsage\Debug\ClientUsage.exe" /INCREMENTAL /NOLOGO D:\Varun\CPPAssignments\Library\Client\Library.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Varun\CPPAssignments\Library\Client\ClientUsage\Debug\ClientUsage.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Varun\CPPAssignments\Library\Client\ClientUsage\Debug\ClientUsage.lib" /MACHINE:X86 Debug\Source.obj
+         Library.lib(library.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+     1>Source.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         Generating code
+         Finished generating code
+         ClientUsage.vcxproj -> D:\Varun\CPPAssignments\Library\Client\ClientUsage\Debug\ClientUsage.exe
+     1>Done Building Project "D:\Varun\CPPAssignments\Library\Client\ClientUsage\ClientUsage\ClientUsage.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.62
