@@ -1,0 +1,10 @@
+﻿Build started 2/21/2017 10:32:41 PM.
+     1>Project "C:\Users\Varun Ramani\CDAC_files\C++\LibraryCPP\Developer\Developer\Developer.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\Varun Ramani\CDAC_files\C++\LibraryCPP\Developer\Debug\Developer.lib" /NOLOGO Debug\Source.obj
+         Developer.vcxproj -> C:\Users\Varun Ramani\CDAC_files\C++\LibraryCPP\Developer\Debug\Developer.lib
+     1>Done Building Project "C:\Users\Varun Ramani\CDAC_files\C++\LibraryCPP\Developer\Developer\Developer.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.26
