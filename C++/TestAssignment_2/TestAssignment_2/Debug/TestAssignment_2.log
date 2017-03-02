@@ -1,0 +1,14 @@
+﻿Build started 3/2/2017 8:43:23 PM.
+     1>Project "C:\Users\Varun Ramani\CDAC_files\C++\TestAssignment_2\TestAssignment_2\TestAssignment_2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\varun ramani\cdac_files\c++\testassignment_2\testassignment_2\source.cpp(37): error C2259: 'TV': cannot instantiate abstract class
+         c:\users\varun ramani\cdac_files\c++\testassignment_2\testassignment_2\source.cpp(37): note: due to following members:
+         c:\users\varun ramani\cdac_files\c++\testassignment_2\testassignment_2\source.cpp(37): note: 'void Advertisement::publish(void)': is abstract
+         c:\users\varun ramani\cdac_files\c++\testassignment_2\testassignment_2\source.cpp(11): note: see declaration of 'Advertisement::publish'
+     1>Done Building Project "C:\Users\Varun Ramani\CDAC_files\C++\TestAssignment_2\TestAssignment_2\TestAssignment_2.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.56
