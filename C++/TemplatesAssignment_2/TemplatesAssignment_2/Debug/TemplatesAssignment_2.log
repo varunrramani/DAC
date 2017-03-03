@@ -1,0 +1,36 @@
+﻿Build started 3/3/2017 12:15:42 PM.
+     1>Project "C:\Users\Varun Ramani\CDAC_files\C++\TemplatesAssignment_2\TemplatesAssignment_2\TemplatesAssignment_2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(19): error C2440: '=': cannot convert from 'int' to 'int *'
+         c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(19): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+         c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(35): note: see reference to function template instantiation 'void sort<int*>(Type,int)' being compiled
+                 with
+                 [
+                     Type=int *
+                 ]
+     1>c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(21): error C2440: '=': cannot convert from 'int *' to 'int'
+         c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(21): note: There is no context in which this conversion is possible
+     1>c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(19): error C2440: '=': cannot convert from 'char' to 'char *'
+         c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(19): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+         c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(36): note: see reference to function template instantiation 'void sort<char*>(Type,int)' being compiled
+                 with
+                 [
+                     Type=char *
+                 ]
+     1>c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(21): error C2440: '=': cannot convert from 'char *' to 'char'
+         c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(21): note: There is no context in which this conversion is possible
+     1>c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(19): error C2440: '=': cannot convert from 'double' to 'double *'
+         c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(37): note: see reference to function template instantiation 'void sort<double*>(Type,int)' being compiled
+                 with
+                 [
+                     Type=double *
+                 ]
+     1>c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(21): error C2440: '=': cannot convert from 'double *' to 'double'
+         c:\users\varun ramani\cdac_files\c++\templatesassignment_2\templatesassignment_2\source.cpp(21): note: There is no context in which this conversion is possible
+     1>Done Building Project "C:\Users\Varun Ramani\CDAC_files\C++\TemplatesAssignment_2\TemplatesAssignment_2\TemplatesAssignment_2.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.73
