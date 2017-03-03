@@ -42,16 +42,11 @@ public:
 		num = ref.num;
 		return *this;
 	}
-	int operator==(MyNum &ref) {
-		if (num == ref.num) {
-			return 0;
-		}
-		else if (num > ref.num) {
-			return 1;
-		}
-		else {
-			return -1;
-		}
+	bool operator<(MyNum &ref) {
+		return num < ref.num;
+	}
+	bool operator>(MyNum &ref) {
+		return num > ref.num;
 	}
 };
 
@@ -69,17 +64,11 @@ public:
 		ch = ref.ch;
 		return *this;
 	}
-	//friend int compareStuff<char>::compare();
-	int operator==(MyChar &ref) {
-		if (ch == ref.ch) {
-			return 0;
-		}
-		else if (ch > ref.ch) {
-			return 1;
-		}
-		else {
-			return -1;
-		}
+	bool operator<(MyChar &ref) {
+		return ch < ref.ch;
+	}
+	bool operator>(MyChar &ref) {
+		return ch > ref.ch;
 	}
 };
 

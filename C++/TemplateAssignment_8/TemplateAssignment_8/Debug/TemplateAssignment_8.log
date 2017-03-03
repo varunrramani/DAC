@@ -1,4 +1,4 @@
-﻿Build started 3/3/2017 6:10:03 PM.
+﻿Build started 3/3/2017 7:30:21 PM.
      1>Project "C:\Users\Varun Ramani\CDAC_files\C++\TemplateAssignment_8\TemplateAssignment_8\TemplateAssignment_8.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
@@ -10,4 +10,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.04
+Time Elapsed 00:00:00.90
