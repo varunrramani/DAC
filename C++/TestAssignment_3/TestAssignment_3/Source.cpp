@@ -65,6 +65,11 @@ public:
 		cout << name << "\t" << country << "\t" << score << endl;
 		return *this;
 	}
+	~Player() {
+		cout << "Inside Destructor" << endl;
+		delete name;
+		delete country;
+	}
 	friend ostream& operator<<(ostream&, Player&);
 };
 
@@ -77,7 +82,7 @@ ostream& operator<<(ostream &o, Player &player) {
 
 void main() {
 	Player p1(1, "sachin", "india", 200);
-	cout << p1 << endl;
+	cout << p1 << endl; // operator<<(cout,p1);
 	p1.disp();
 	Player p2 = p1;
 	cout << p2 << endl;

@@ -8,6 +8,9 @@ now traverse through the array and check using dynamic cast , if array contains 
 using namespace std;
 class Advertisement {
 public:
+	virtual ~Advertisement() {
+		cout << "Inside Ads Des" << endl;
+	}
 	virtual void publish() = 0;
 };
 
@@ -16,6 +19,9 @@ public:
 	void publish() {
 		cout << "Inside TV publish" << endl;
 	}
+	~TV() {
+		cout << "In TV Destructor" << endl;
+	}
 };
 
 class Banner : public Advertisement {
@@ -23,12 +29,18 @@ public:
 	void publish() {
 		cout << "Inside Banner Publish" << endl;
 	}
+	~Banner() {
+		cout << "In Banner Destructor" << endl;
+	}
 };
 
 class NewsPaper : public Advertisement {
-public :
+public:
 	void publish() {
 		cout << "Inside NewsPaper publish" << endl;
+	}
+	~NewsPaper() {
+		cout << "In NewsPaper destructor" << endl;
 	}
 };
 
@@ -45,5 +57,8 @@ void main() {
 		else {
 			cout << "Not Banner" << endl;
 		}
+	};
+	for (int i = 0; i < 3; i++) {
+		delete ads[i];
 	}
 }
