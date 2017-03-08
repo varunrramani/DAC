@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>Assignment 2 Question 5</title>
+        <link rel="stylesheet" href="Question5_1.css">
+        </style>
     </head>
     <body>
         <fieldset>
@@ -46,6 +48,78 @@
                     <OPTION>Diploma in Embedded systems</OPTION>
 	            </SELECT>
                 <br />
+                <hr />
+                <fieldset>
+                    <label><b><u>Education and qualitfication</u></b></label><br />
+                    <div class="qualificationDiv">
+                        <label for="qualitfication" class="formLabels"><b>Qualitfication</b></label>
+                        <label for="specialization" class="formLabels"><b>Specialization</b></label>
+                        <label for="percentage" class="formLabels"><b>Percentage</b></label>
+                        <label for="yearOfPassing" class="formLabels"><b>Year of Passing</b></label>
+                        <label for="university" class="formLabels"><b>University/Board</b></label>
+                    </div><br />
+                    <div class="qualificationDiv">
+                        <label for="ssc" class="formLabels" style="text-align: center">SSC</label>
+                        <label for="blank" class="formLabels">&nbsp;</label>
+                        <input type="text" name="sscPercent" class="inputArea" />
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" name="sscPassing" class="inputArea">
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" name="sscUniversity" class="inputArea">
+                    </div><br /><br>
+                    <div class="qualificationDiv">
+                        <div class="inputArea">
+                            <label class="inputRadio"><input type="radio" name="hsc">HSC</label>
+                            <label class="inputRadio"><input type="radio" name="hsc">Dip</label>
+                        </div>
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" name="hscSpecialization" class="inputArea" />
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" class="inputArea" name="hscPercent" />
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" class="inputArea" name="hscPassing" />
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" class="inputArea" name="hscUniversity" />
+                    </div><br><br>
+                    <div class="qualificationDiv">
+                        <div class="inputArea">
+                            <SELECT name="grad" >
+                                <OPTION>Graduation</OPTION>
+                                <OPTION>BCA</OPTION>
+                                <OPTION>B.E</OPTION>
+                                <OPTION>B.Tech</OPTION>
+                                <OPTION>BSC</OPTION>
+                            </SELECT>
+                        </div>
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" class="inputArea" name="gradSpecialization" />
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" class="inputArea" name="gradPercent" />
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" class="inputArea" name="gradPassing" />
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" class="inputArea" name="gradUniversity" />
+                    </div><br><br>
+                    <div class="qualificationDiv">
+                        <div class="inputArea">
+                            <SELECT name="pg">
+                                <OPTION>P Graduation</OPTION>
+                                <OPTION>MCA</OPTION>
+                                <OPTION>M.E</OPTION>
+                                <OPTION>M.Tech</OPTION>
+                                <OPTION>MSC</OPTION>
+                            </SELECT>
+                        </div>
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" class="inputArea" name="pgSpecialization" />
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" class="inputArea" name="pgPercentage" />
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" class="inputArea" name="pgPassing" />
+                        <label for="empty" class="emptyArea">&nbsp;</label>
+                        <input type="text" class="inputArea" name="pgUniversity" />
+                    </div>
+                </fieldset>
                 <input type="submit" value="Submit">
             </form>
         </fieldset>

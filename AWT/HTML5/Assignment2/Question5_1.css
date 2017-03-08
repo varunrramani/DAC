@@ -1,0 +1,25 @@
+.formLabels{
+    width: 20%;
+    float: left;
+}
+
+.qualificationDiv{
+    width: 50%;
+    float: left;
+}
+
+.inputArea{
+    width: 15%;
+    float: left;
+}
+
+.inputRadio{
+    width: 10%;
+    font-size: 10px;
+}
+
+.emptyArea {
+    width: 5%;
+    float: left;
+    color: transparent;
+}
