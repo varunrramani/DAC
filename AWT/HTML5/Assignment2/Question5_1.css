@@ -1,3 +1,16 @@
+body{
+    background-color: dodgerblue;
+    color: white;
+}
+
+.mainFormLabels {
+    width: 25%;
+    float: left;
+}
+.mainFormInput {
+    width: 25%;
+    float: left;
+}
 .formLabels{
     width: 20%;
     float: left;

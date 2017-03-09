@@ -9,37 +9,37 @@
         <fieldset>
             <legend align="left">Application Form</legend>
             <form method="GET">
-                <label for="firstName">First Name:</label>
-                <input type="text" name="firstName" placeholder="First Name" /><br />
-                <label for="middleName">Middle Name:</label>
-                <input type="text" name="middleName" placeholder="Middle Name"><br />
-                <label for="lastName">Last Name:</label>
-                <input type="text" name="lastName" placeholder="Last Name"><br />
-                <label for="birthDate">Birth Date:</label>
-                <input type="date" name="birthDate"><br />
-                <label for="address1">Permanent Address:</label>
-                <textarea name="address1" id="permanentAddress" cols="10" rows="3"></textarea><br />
-                <label for="address2">Contact Address:</label>
-                <textarea name="address2" id="contactAddress" cols="10" rows="3"></textarea> <br />
-                <label for="city">City:</label>
-                <input type="text" name="city" placeholder="City" /><br />
-                <label for="state">State:</label>
-                <input type="text" name="state" placeholder="State" /><br />
-                <label for="country">Country:</label>
-                <input type="text" placeholder="Country" name="country" /><br />
-                <label for="postalCode">Postal Code</label>
-                <input type="text" name="postalCode" /><br />
-                <label for="contactNumber">Contact Number</label>
-                <input type="number" name="contactNumber" /><br />
-                <label for="nationality">Nationality:</label>
-                <input type="text" name="nationality"><br />
-                <label for="email">Email:</label>
-                <input type="email" name="email" /><br />
-                <label for="alternateEmail">Alternate Email:</label>
-                <input type="email" name="alternateEmail" /><br />
+                <label for="firstName" class="mainFormLabels">First Name:</label>
+                <input type="text" name="firstName" class="mainFormInput" placeholder="First Name" /><br /><br>
+                <label for="middleName" class="mainFormLabels">Middle Name:</label>
+                <input type="text" name="middleName" placeholder="Middle Name" class="mainFormInput"><br /><br>
+                <label for="lastName" class="mainFormLabels">Last Name:</label>
+                <input type="text" name="lastName" placeholder="Last Name" class="mainFormInput"><br /><br>
+                <label for="birthDate" class="mainFormLabels">Birth Date:</label>
+                <input type="date" name="birthDate" class="mainFormInput"><br /><br>
+                <label for="address1" class="mainFormLabels">Permanent Address:</label>
+                <textarea name="address1" id="permanentAddress" cols="10" rows="3" class="mainFormInput"></textarea><br /><br><br>
+                <label for="address2" class="mainFormLabels">Contact Address:</label>
+                <textarea name="address2" id="contactAddress" cols="10" rows="3" class="mainFormInput"></textarea> <br /><br><br>
+                <label for="city" class="mainFormLabels">City:</label>
+                <input type="text" name="city" placeholder="City" class="mainFormInput" /><br /><br>
+                <label for="state" class="mainFormLabels">State:</label>
+                <input type="text" name="state" placeholder="State" class="mainFormInput" /><br /><br>
+                <label for="country" class="mainFormLabels">Country:</label>
+                <input type="text" placeholder="Country" class="mainFormInput" name="country" /><br /><br>
+                <label for="postalCode" class="mainFormLabels">Postal Code</label>
+                <input type="number" name="postalCode" class="mainFormInput" /><br /><br>
+                <label for="contactNumber" class="mainFormLabels">Contact Number</label>
+                <input type="number" name="contactNumber" class="mainFormInput" /><br /><br>
+                <label for="nationality" class="mainFormLabels">Nationality:</label>
+                <input type="text" name="nationality" class="mainFormInput"><br /><br>
+                <label for="email" class="mainFormLabels">Email:</label>
+                <input type="email" name="email" class="mainFormInput" /><br /><br>
+                <label for="alternateEmail" class="mainFormLabels">Alternate Email:</label>
+                <input type="email" name="alternateEmail" class="mainFormInput" /><br /><br>
                 <strong>Course Preference</strong><br />
-                <label for="coursePreference">Course Preference:</label>
-                <SELECT size="3">
+                <label for="coursePreference" class="mainFormLabels">Course Preference:</label>
+                <SELECT size="3" class="mainFormInput">
                     <OPTION>- - -Select Course for admission- - -</OPTION>
                     <OPTION>Diploma in Advanced Computing</OPTION>
                     <OPTION>Diploma in Wireless and Mobile comm.</OPTION>
@@ -47,7 +47,7 @@
                     <OPTION>Diploma in VLSI</OPTION>
                     <OPTION>Diploma in Embedded systems</OPTION>
 	            </SELECT>
-                <br />
+                <br /><br><br><br><br>
                 <hr />
                 <fieldset>
                     <label><b><u>Education and qualitfication</u></b></label><br />
@@ -61,9 +61,9 @@
                     <div class="qualificationDiv">
                         <label for="ssc" class="formLabels" style="text-align: center">SSC</label>
                         <label for="blank" class="formLabels">&nbsp;</label>
-                        <input type="text" name="sscPercent" class="inputArea" style="margin-left: 0.7%;" />
+                        <input type="number" name="sscPercent" class="inputArea" style="margin-left: 0.7%;" />
                         <label for="empty" class="emptyArea">&nbsp;</label>
-                        <input type="text" name="sscPassing" class="inputArea">
+                        <input type="number" name="sscPassing" class="inputArea">
                         <label for="empty" class="emptyArea">&nbsp;</label>
                         <input type="text" name="sscUniversity" class="inputArea">
                     </div><br /><br>
@@ -75,9 +75,9 @@
                         <label for="empty" class="emptyArea">&nbsp;</label>
                         <input type="text" name="hscSpecialization" class="inputArea" />
                         <label for="empty" class="emptyArea">&nbsp;</label>
-                        <input type="text" class="inputArea" name="hscPercent" />
+                        <input type="number" class="inputArea" name="hscPercent" />
                         <label for="empty" class="emptyArea">&nbsp;</label>
-                        <input type="text" class="inputArea" name="hscPassing" />
+                        <input type="number" class="inputArea" name="hscPassing" />
                         <label for="empty" class="emptyArea">&nbsp;</label>
                         <input type="text" class="inputArea" name="hscUniversity" />
                     </div><br><br>
@@ -94,9 +94,9 @@
                         <label for="empty" class="emptyArea">&nbsp;</label>
                         <input type="text" class="inputArea" name="gradSpecialization" />
                         <label for="empty" class="emptyArea">&nbsp;</label>
-                        <input type="text" class="inputArea" name="gradPercent" />
+                        <input type="number" class="inputArea" name="gradPercent" />
                         <label for="empty" class="emptyArea">&nbsp;</label>
-                        <input type="text" class="inputArea" name="gradPassing" />
+                        <input type="number" class="inputArea" name="gradPassing" />
                         <label for="empty" class="emptyArea">&nbsp;</label>
                         <input type="text" class="inputArea" name="gradUniversity" />
                     </div><br><br>
@@ -113,9 +113,9 @@
                         <label for="empty" class="emptyArea">&nbsp;</label>
                         <input type="text" class="inputArea" name="pgSpecialization" />
                         <label for="empty" class="emptyArea">&nbsp;</label>
-                        <input type="text" class="inputArea" name="pgPercentage" />
+                        <input type="number" class="inputArea" name="pgPercentage" />
                         <label for="empty" class="emptyArea">&nbsp;</label>
-                        <input type="text" class="inputArea" name="pgPassing" />
+                        <input type="number" class="inputArea" name="pgPassing" />
                         <label for="empty" class="emptyArea">&nbsp;</label>
                         <input type="text" class="inputArea" name="pgUniversity" />
                     </div>
