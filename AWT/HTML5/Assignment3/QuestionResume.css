@@ -1,0 +1,32 @@
+body{
+    background: linear-gradient(#80deea, #b2ebf2);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+}
+
+.content {
+    margin-left: 200px;
+}
+
+.profileImage {
+    float: right;
+    margin-right: 10%;
+    width: 150px;
+    height: 150px;
+}
+
+.resumeHeader {
+    text-align: center;
+}
+
+.table{
+    width: 50%;
+}
