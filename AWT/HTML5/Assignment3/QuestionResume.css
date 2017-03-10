@@ -1,6 +1,8 @@
 body{
-    background: linear-gradient(#80deea, #b2ebf2);
-    background-repeat: no-repeat;
+    /*background: linear-gradient(#80deea, #b2ebf2);*/
+    background-image: url('vertical_pattern.png'), linear-gradient(#80deea, #b2ebf2);
+    background-repeat: repeat-y;
+    /*background-color: blue;*/
     background-attachment: fixed;
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -29,4 +31,13 @@ body{
 
 .table{
     width: 50%;
+    float: left;
+}
+.tableContentHeader{
+    font-weight: 800;
+}
+.tableContent {
+    width: 25%;
+    float: left;
+    text-align: center;
 }
