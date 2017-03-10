@@ -1,0 +1,50 @@
+body {
+    background-color: #80deea;
+    color: white
+}
+
+.container {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    border: thin solid white;
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+}
+
+.leftPane{
+    width: 20%;
+    float: left;
+}
+
+.centerPane{
+    width: 56%;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.rightPane {
+    width: 20%;
+    float: left;
+}
+
+.leftLinks {
+    float: left;
+    text-align: center;
+    margin-top: 35%;
+}
+
+.ad{
+    height: 50%;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    width: 100%;
+    color: white;
+}
