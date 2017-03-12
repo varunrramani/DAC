@@ -1,0 +1,26 @@
+<script>
+    "use strict"
+    function account(name, accountID) {
+        this.name = name;
+        this.accountID = accountID;
+        this.balance = 0;
+        this.deposit = function(depositAmount) {
+            this.balance = this.balance + depositAmount;
+            console.log("Balance after deposit is : " + this.balance);
+        }
+        this.withdraw = function(withdrawAmount) {
+            if(withdrawAmount > this.balance) {
+                alert("Not enough balance");
+            } else {
+                this.balance = this.balance - withdrawAmount;
+            }
+            console.log("Balance after withdraw is : " + this.balance);
+        }
+    }
+
+    var obj1 = new account("Varun Ramani", 1);
+    var depositAmount = parseInt(prompt("Enter amount to be deposited"));
+    obj1.deposit(depositAmount);
+    var withdrawAmount = parseInt(prompt("Enter amount to withdraw you have " + obj1.balance + " in your account"));
+    obj1.withdraw(withdrawAmount);
+</script>
