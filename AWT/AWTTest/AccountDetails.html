@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Layout Test</title>
+		<link rel="stylesheet" href="test.css" />
+		<script type="text/javascript" src="AccountDetails.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1>DAC</h1>
+			</div>
+			<div class="linksDiv">
+				<a class="links" href="employeedetails.html">Employee Details</a>
+				<a class="links" href="AccountDetails.html">Account Details</a>
+				<a class="links" href="test.html">test</a>
+				<a class="links" href="test.html">test</a>
+				<a class="links" href="test.html">test</a>
+			</div>
+			<div class="mainContent">
+				<script>
+                    var currentAccount = new CurrentAccount("Varun");
+                    currentAccount.deposit(100);
+                    console.log(currentAccount);
+                    document.write(currentAccount);
+
+                    var savingAccount = new SavingAccount("Varun");
+                    savingAccount.deposit(1000);
+                    console.log(savingAccount);
+                    savingAccount.withdraw(500);
+                    console.log(savingAccount);
+                    document.write(savingAccount);
+                </script>
+			</div>
+		</div>
+	</body>
+</html>
