@@ -1,15 +1,15 @@
 "use strict"
-var i = 0;
+//var i = 0;
 function Employee(name, salary) {
-	++i;
-	if (i <= 2) {
+	//++i;
+	//if (i <= 2) {
 	Employee.id = ++Employee.id || 1;
 		Employee.company = "Developers Private ltd.";
 		this.name = name;
 		this.id = Employee.id;
 		this.salary = salary;
 
-	}
+	//}
 }
 Employee.prototype.toString = function () {
 	return "Employee Details <br/>" + Employee.company + " Name : " + this.name + "<br/>Id : " + this.id + "<br/>Salary : " + this.salary + "<br/><br/>";

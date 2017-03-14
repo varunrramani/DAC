@@ -3,7 +3,7 @@
 	<head>
 		<title>Layout Test</title>
 		<link rel="stylesheet" href="test.css" />
-		<script type="text/javascript" src="AccountDetails.js"></script>
+		<script type="text/javascript" src="AccountDetailsNew.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -19,12 +19,12 @@
 			</div>
 			<div class="mainContent">
 				<script>
-                    var currentAccount = new CurrentAccount("Varun");
+                    var currentAccount = new CurrentAccount("Varun", 1000);
                     currentAccount.deposit(100);
                     console.log(currentAccount);
                     document.write(currentAccount);
 
-                    var savingAccount = new SavingAccount("Varun");
+                    var savingAccount = new SavingAccount("Varun", 10000);
                     savingAccount.deposit(1000);
                     console.log(savingAccount);
                     savingAccount.withdraw(500);
