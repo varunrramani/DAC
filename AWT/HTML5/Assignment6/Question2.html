@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Question 2</title>
+        <script>
+            function changeAlign() {
+                var name = document.getElementById("name");
+                var alignAtribute = name.getAttribute("align");
+                console.log(alignAtribute);
+                name.setAttribute("align", "right");
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="name" align="center">Varun</h1>
+        <input type="button" onclick="changeAlign();" value="Change Align" />
+    </body>
+</html>
