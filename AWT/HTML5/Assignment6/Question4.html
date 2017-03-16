@@ -13,13 +13,25 @@
                 contentDiv.innerHTML += "<h1>" + paras[i].innerHTML + "</h1>";
             }
         }
+        function mouseOver() {
+            var buttonCopyData = document.getElementById("buttonCopyData");
+            buttonCopyData.value = "Mouse over";
+        }
+
+        function mouseOut() {
+            var buttonCopyData = document.getElementById("buttonCopyData");
+            buttonCopyData.value = "Mouse Out";
+            setTimeout(function() {
+                buttonCopyData.value = "Copy Content";
+            }, 2000);
+        }
     </script>
 </head>
 <body>
     <p>Test Para 1</p>
     <p>Test Para 2</p>
     <p>Test Para 3</p>
-    <input type="button" onclick="copyData();" value="Copy Content">
+    <input id="buttonCopyData" type="button" onmouseover="mouseOver();" onmouseout="mouseOut();" onclick="copyData();" value="Copy Content">
     <div id="contentDiv">
 
     </div>
