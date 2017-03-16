@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Question 3</title>
+        <script>
+            function copyText() {
+                var textbox1Value = document.getElementById("textbox1").value;
+                document.getElementById("textbox2").value = textbox1Value;
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="textbox1" placeholder="Text 1" />
+        <input type="button" id="copyButton" value="Copy Text" onclick="copyText();" />
+        <input type="text" id="textbox2" placeholder="Text 2" />
+    </body>
+</html>
