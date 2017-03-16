@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <style>
+            .Name1 {
+                color: green;
+                font-size: 25px;
+            }
+            .Name2 {
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1 id="name" class="Name1">Varun Ramani</h1>
+            <input type="button" value="Change Class" onclick="changeClass();" />
+        </div>
+        <script>
+            function changeClass() {
+                var name = document.getElementById("name");
+                console.log(name.classList);
+                name.classList.add("Name2");
+            }
+        </script>
+    </body>
+</html>
