@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Question getElementsByClassName</title>
+        <style>
+            .dlClass {
+                background-color: #098765;
+                color: white;
+            }
+            .dtClass {
+                border-style: dotted;
+                border-color: red;
+            }
+        </style>
+        <script>
+            function changeValue() {
+                var dlClass = document.getElementsByClassName("dlClass");
+                console.log(dlClass);
+                console.log(dlClass.item(0).getElementsByClassName("dtClass").item(0).innerHTML);
+                dlClass.item(0).getElementsByClassName("dtClass").item(0).innerHTML = "Test";
+            }
+        </script>
+    </head>
+    <body>
+        <dl class="dlClass">
+            <dt class="dtClass">Milk</dt>
+            <dt class="dtClass">Coffee</dt>
+            <dt class="dtClass">Tea</dt>
+        </dl>
+        <button onclick="changeValue();">Change Value</button>
+    </body>
+</html>
