@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Question Form Count</title>
+        <script>
+            function countForms() {
+                var formsCount = document.forms.length;
+                console.log("Number of forms are: " + formsCount);
+            }
+        </script>
+    </head>
+    <body>
+        <form action="" name="form1">
+            <input type="text" placeholder="Form 1 TextBox" /><br>
+            <button onclick="countForms()">Count Forms</button>
+        </form>
+        <form action="" name="form2">
+            <input type="text" placeholder="Form 2 TextBox" /><br>
+            <button>Count Forms 2</button>
+        </form>
+        <form action="" name="form3">
+            <input type="text" placeholder="Form 3 TextBox" /><br>
+            <button>Count Forms 3</button>
+        </form>
+    </body>
+</html>
