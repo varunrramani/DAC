@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Question Stop Watch setTimeout</title>
+        <script>
+            var timer;
+            var counter = 0;
+            var seconds = 0, minutes = 0;
+            function startTimer() {
+                timer = setInterval("setTimerText()", 1000);
+            }
+
+            function setTimerText() {
+                seconds += 1;
+                if (seconds == 60) {
+                    seconds = 0;
+                    minutes += 1;
+                }
+                document.getElementById("minute").innerHTML = minutes;
+                document.getElementById("second").innerHTML = seconds;
+            }
+
+            function stopTimer() {
+                clearInterval(timer);
+            }
+
+            function lapTimer() {
+                counter += 1;
+                var laps = document.getElementById("laps");
+                laps.innerHTML += "<br>Lap " + counter + ": " + minutes + ":" + seconds;
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <span id="minute"></span>&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<span id="second"></span>
+        </div>
+        <div>
+            <button id="start" onclick="startTimer();">Start</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button id="stop" onclick="stopTimer();">Stop</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button id="lap" onclick="lapTimer();">Lap</button>
+        </div>
+        <div id="laps"></div>
+    </body>
+</html>
