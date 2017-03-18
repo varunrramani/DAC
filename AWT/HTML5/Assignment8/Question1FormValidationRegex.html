@@ -3,7 +3,7 @@
         <title>Form Validation using Regex</title>
         <script>
             function validateEmail() {
-                var pattern = /^\w{1,}\.?\w+@[a-z]+\.{1}[a-z]+\.?[a-z]*$/;
+                var pattern = /^\w{1,}\.?\w+@[a-z]+\.{1}[a-z]+\.?[a-z]+$/;
                 var emailInput = document.getElementById("emailInput").value;
                 console.log(pattern.test(emailInput));
                 var emailErrorSpan = document.getElementById("emailErrorSpan");
@@ -17,6 +17,8 @@
             }
             function validatePassword() {
                 var pattern = /^[A-Z][A-Za-z0-9_*\.*@*]{7,}/;
+                //^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}
+                // from http://stackoverflow.com/a/21456918/5152351
                 var passwordInput = document.getElementById("passwordInput").value;
                 console.log(pattern.test(passwordInput));
                 var passwordErrorSpan = document.getElementById("passwordErrorSpan");
@@ -35,24 +37,51 @@
                 var reenterPasswordInput = document.getElementById("reenterPasswordInput");
                 var result = passwordInput.value == reenterPasswordInput.value;
                 var reenterPasswordErrorSpan = document.getElementById("reenterPasswordErrorSpan");
-                if (!result) {
-                    reenterPasswordErrorSpan.innerHTML = "Passwords dont match";
-                } else {
+                if (result) {
                     reenterPasswordErrorSpan.innerHTML = "";
+                } else {
+                    reenterPasswordErrorSpan.innerHTML = "Passwords dont match";
                 }
                 return result;
+            }
+
+            function validateMobile() {
+                var pattern = /^\d{10}$/
+                var mobileNumberInput = document.getElementById("mobileNumberInput");
+                var result = pattern.test(mobileNumberInput.value);
+                var mobileNumberErrorSpan = document.getElementById("mobileNumberErrorSpan");
+                if(!result) {
+                    mobileNumberErrorSpan.innerHTML = "Please enter valid Phone Number";
+                } else {
+                    mobileNumberErrorSpan.innerHTML = "";
+                }
+                return result;
+            }
+            function submitData() {
+                var emailValidate = validateEmail();
+                var passwordValidate = validatePassword();
+                var mobileValidate = validateMobile();
+                if (emailValidate && passwordValidate && mobileValidate) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
         </script>
     </head>
     <body>
-        <form>
+        <form onsubmit="return submitData();">
             <input type="text" name="email" placeholder="email" id="emailInput" onchange="validateEmail();" /><span id="emailErrorSpan"></span><br>
             <input type="password" name="password" id="passwordInput" placeholder="password" onchange="validatePassword();" />
             <span id="passwordErrorSpan"></span><br>
             <input type="password" name="reenterPassword" id="reenterPasswordInput" placeholder="Re-enter Password" onchange="matchPassword();" />
             <span id="reenterPasswordErrorSpan"></span><br>
-            <input type="text" name="mobileNumber" /><span id="mobileNumberErrorSpan"></span><br>
-            <input type="text" name="pinNumber" /><span id="pinNumberErrorSpan"></span><br>
+            <input type="text" name="mobileNumber" id="mobileNumberInput" onchange="validateMobile();" placeholder="Mobile Number" />
+            <span id="mobileNumberErrorSpan"></span><br>
+            <input type="text" name="pinNumber" id="pinNumberInput" placeholder="PIN Number" />
+            <span id="pinNumberErrorSpan"></span><br>
+            <input type="submit" onclick="submitData();" value="Submit" /><br>
+            <input type="reset" value="Reset"/>
         </form>
     </body>
 </html>
