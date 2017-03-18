@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Form Validation using Regex</title>
+        <script>
+            function validateEmail() {
+                var pattern = /^\w{1,}\.?\w+@[a-z]+\.{1}[a-z]+\.?[a-z]*$/;
+                var emailInput = document.getElementById("emailInput").value;
+                console.log(pattern.test(emailInput));
+                var emailErrorSpan = document.getElementById("emailErrorSpan");
+                var result = pattern.test(emailInput);
+                if (result) {
+                    emailErrorSpan.innerHTML = "";
+                } else {
+                    emailErrorSpan.innerHTML = "Please Input valid email";
+                }
+                return result;
+            }
+            function validatePassword() {
+                var pattern = /^[A-Z][A-Za-z0-9_*\.*@*]{7,}/;
+                var passwordInput = document.getElementById("passwordInput").value;
+                console.log(pattern.test(passwordInput));
+                var passwordErrorSpan = document.getElementById("passwordErrorSpan");
+                var result = pattern.test(passwordInput);
+                if (result) {
+                    passwordErrorSpan.innerHTML = "";
+                } else {
+                    passwordErrorSpan.innerHTML = "Your Password should start with Capital letter " +
+                    "and should have atleast one '_ or . or @' and should be atleast 8 characters";
+                }
+                return result;
+            }
+
+            function matchPassword() {
+                var passwordInput = document.getElementById("passwordInput");
+                var reenterPasswordInput = document.getElementById("reenterPasswordInput");
+                var result = passwordInput.value == reenterPasswordInput.value;
+                var reenterPasswordErrorSpan = document.getElementById("reenterPasswordErrorSpan");
+                if (!result) {
+                    reenterPasswordErrorSpan.innerHTML = "Passwords dont match";
+                } else {
+                    reenterPasswordErrorSpan.innerHTML = "";
+                }
+                return result;
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <input type="text" name="email" placeholder="email" id="emailInput" onchange="validateEmail();" /><span id="emailErrorSpan"></span><br>
+            <input type="password" name="password" id="passwordInput" placeholder="password" onchange="validatePassword();" />
+            <span id="passwordErrorSpan"></span><br>
+            <input type="password" name="reenterPassword" id="reenterPasswordInput" placeholder="Re-enter Password" onchange="matchPassword();" />
+            <span id="reenterPasswordErrorSpan"></span><br>
+            <input type="text" name="mobileNumber" /><span id="mobileNumberErrorSpan"></span><br>
+            <input type="text" name="pinNumber" /><span id="pinNumberErrorSpan"></span><br>
+        </form>
+    </body>
+</html>
