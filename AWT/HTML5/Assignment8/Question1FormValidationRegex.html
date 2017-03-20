@@ -46,7 +46,7 @@
             }
 
             function validateMobile() {
-                var pattern = /^\d{10}$/
+                var pattern = /^[9|8|7]\d{9}$/
                 var mobileNumberInput = document.getElementById("mobileNumberInput");
                 var result = pattern.test(mobileNumberInput.value);
                 var mobileNumberErrorSpan = document.getElementById("mobileNumberErrorSpan");
