@@ -67,10 +67,18 @@
                     return false;
                 }
             }
+
+            function resetSpans() {
+                document.getElementById("emailErrorSpan").innerHTML = "";
+                document.getElementById("passwordErrorSpan").innerHTML = "";
+                document.getElementById("reenterPasswordErrorSpan").innerHTML = "";
+                document.getElementById("mobileNumberErrorSpan").innerHTML = "";
+                document.getElementById("pinNumberErrorSpan").innerHTML = "";
+            }
         </script>
     </head>
     <body>
-        <form onsubmit="return submitData();">
+        <form onsubmit="return submitData();" onreset="resetSpans();">
             <input type="text" name="email" placeholder="email" id="emailInput" onchange="validateEmail();" /><span id="emailErrorSpan"></span><br>
             <input type="password" name="password" id="passwordInput" placeholder="password" onchange="validatePassword();" />
             <span id="passwordErrorSpan"></span><br>
@@ -80,7 +88,7 @@
             <span id="mobileNumberErrorSpan"></span><br>
             <input type="text" name="pinNumber" id="pinNumberInput" placeholder="PIN Number" />
             <span id="pinNumberErrorSpan"></span><br>
-            <input type="submit" onclick="submitData();" value="Submit" /><br>
+            <input type="submit" value="Submit" /><br>
             <input type="reset" value="Reset"/>
         </form>
     </body>
