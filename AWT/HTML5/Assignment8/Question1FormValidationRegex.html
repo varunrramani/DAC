@@ -68,6 +68,7 @@
                 } else {
                     pinNumberErrorSpan.innerHTML = "";
                 }
+                return result;
             }
 
             function submitData() {
@@ -92,8 +93,9 @@
         </script>
     </head>
     <body>
-        <form onsubmit="return submitData();" onreset="resetSpans();">
-            <input type="text" name="email" placeholder="email" id="emailInput" onchange="validateEmail();" /><span id="emailErrorSpan"></span><br>
+        <form onsubmit="return submitData();" onreset="resetSpans();" action="1.html" method="POST">
+            <input type="text" name="email" placeholder="email" id="emailInput" onchange="validateEmail();" />
+            <span id="emailErrorSpan"></span><br>
             <input type="password" name="password" id="passwordInput" placeholder="password" onchange="validatePassword();" />
             <span id="passwordErrorSpan"></span><br>
             <input type="password" name="reenterPassword" id="reenterPasswordInput" placeholder="Re-enter Password" onchange="matchPassword();" />
