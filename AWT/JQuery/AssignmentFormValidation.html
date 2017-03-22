@@ -18,7 +18,7 @@
             $("#mobileNumberInput").change(function () {
                 validateMobile();
             });
-            $("#pinInput").change(function () {
+            $("#pinNumberInput").change(function () {
                 validatePin();
             });
             $("#registrationForm").submit(function(event) {
@@ -83,7 +83,7 @@
             return result;
         }
         function validatePin() {
-            var pattern = /^\d{6}/
+            var pattern = /^\d{6}$/
             var pinNumberInput = $("#pinNumberInput").val();
             var result = pattern.test(pinNumberInput);
             var pinNumberErrorSpan = $("#pinNumberErrorSpan");
@@ -107,11 +107,11 @@
         }
 
         function resetSpans() {
-            document.getElementById("emailErrorSpan").innerHTML = "";
-            document.getElementById("passwordErrorSpan").innerHTML = "";
-            document.getElementById("reenterPasswordErrorSpan").innerHTML = "";
-            document.getElementById("mobileNumberErrorSpan").innerHTML = "";
-            document.getElementById("pinNumberErrorSpan").innerHTML = "";
+            $("#emailErrorSpan").html("");
+            $("#passwordErrorSpan").html("");
+            $("#reenterPasswordErrorSpan").html("");
+            $("#mobileNumberErrorSpan").html("");
+            $("#pinNumberErrorSpan").html("");
         }
     </script>
 </head>
