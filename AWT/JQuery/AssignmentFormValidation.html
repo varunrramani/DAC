@@ -1,0 +1,139 @@
+<html>
+
+<head>
+    <title>Validation Using jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#emailInput").change(function () {
+                validateEmail();
+            });
+            $("#passwordInput").change(function () {
+                validatePassword();
+            });
+
+            $("#reenterPasswordInput").change(function () {
+                matchPassword();
+            });
+            $("#mobileNumberInput").change(function () {
+                validateMobile();
+            });
+            $("#pinInput").change(function () {
+                validatePin();
+            });
+            $("#registrationForm").submit(function(event) {
+                //alert("Submit called");
+                if (submitData()) {
+                    return;
+                }
+                event.preventDefault();
+            });
+        });
+        function validateEmail() {
+            var pattern = /^\w{1,}\.?\w+@[a-z]+\.{1}[a-z]+\.?[a-z]+$/;
+            var emailInput = $("#emailInput").val();
+            console.log(emailInput);
+            var result = pattern.test(emailInput);
+            console.log(result);
+            if (result) {
+                $("#emailErrorSpan").text("");
+            } else {
+                $("#emailErrorSpan").text("Please input valid email");
+            }
+            return result;
+        }
+
+        function validatePassword() {
+            var pattern = /^[A-Z][A-Za-z0-9_*\.*@*]{7,}/;
+            //^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}
+            // from http://stackoverflow.com/a/21456918/5152351
+            var passwordInput = $("#passwordInput").val();
+            var result = pattern.test(passwordInput);
+            if (result) {
+                $("#passwordErrorSpan").text("");
+            } else {
+                $("#passwordErrorSpan").text("Your Password should start with Capital letter " +
+                    "and should have atleast one '_ or . or @' and should be atleast 8 characters");
+            }
+            return result;
+        }
+
+        function matchPassword() {
+            var passwordInput = $("#passwordInput").val();
+            var reenterPasswordInput = $("#reenterPasswordInput").val();
+            var result = passwordInput == reenterPasswordInput;
+            if (result) {
+                $("#reenterPasswordErrorSpan").html("");
+            } else {
+                $("#reenterPasswordErrorSpan").html("Passwords dont match");
+            }
+            return result;
+        }
+
+        function validateMobile() {
+            var pattern = /^[9|8|7]\d{9}$/
+            var mobileNumberInput = $("#mobileNumberInput").val();
+            var result = pattern.test(mobileNumberInput);
+            var mobileNumberErrorSpan = $("#mobileNumberErrorSpan");
+            if (!result) {
+                mobileNumberErrorSpan.html("Please enter valid Phone Number");
+            } else {
+                mobileNumberErrorSpan.html("");
+            }
+            return result;
+        }
+        function validatePin() {
+            var pattern = /^\d{6}/
+            var pinNumberInput = $("#pinNumberInput").val();
+            var result = pattern.test(pinNumberInput);
+            var pinNumberErrorSpan = $("#pinNumberErrorSpan");
+            if (!result) {
+                pinNumberErrorSpan.html("Please enter valid PIN number");
+            } else {
+                pinNumberErrorSpan.html("");
+            }
+            return result;
+        }
+        function submitData() {
+            var emailValidate = validateEmail();
+            var passwordValidate = validatePassword();
+            var mobileValidate = validateMobile();
+            var pinValidate = validatePin();
+            if (emailValidate && passwordValidate && mobileValidate && pinValidate) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function resetSpans() {
+            document.getElementById("emailErrorSpan").innerHTML = "";
+            document.getElementById("passwordErrorSpan").innerHTML = "";
+            document.getElementById("reenterPasswordErrorSpan").innerHTML = "";
+            document.getElementById("mobileNumberErrorSpan").innerHTML = "";
+            document.getElementById("pinNumberErrorSpan").innerHTML = "";
+        }
+    </script>
+</head>
+
+<body>
+
+    <body>
+        <form id="registrationForm" onreset="resetSpans();" action="1.html">
+            <input type="text" name="email" placeholder="email" id="emailInput" />
+            <span id="emailErrorSpan"></span><br>
+            <input type="password" name="password" id="passwordInput" placeholder="password" />
+            <span id="passwordErrorSpan"></span><br>
+            <input type="password" name="reenterPassword" id="reenterPasswordInput" placeholder="Re-enter Password" />
+            <span id="reenterPasswordErrorSpan"></span><br>
+            <input type="text" name="mobileNumber" id="mobileNumberInput" placeholder="Mobile Number" />
+            <span id="mobileNumberErrorSpan"></span><br>
+            <input type="text" name="pinNumber" id="pinNumberInput" placeholder="PIN Number" />
+            <span id="pinNumberErrorSpan"></span><br>
+            <input type="submit" value="Submit" /><br>
+            <input type="reset" value="Reset" />
+        </form>
+    </body>
+</body>
+
+</html>
