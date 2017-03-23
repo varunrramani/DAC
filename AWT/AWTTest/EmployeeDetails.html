@@ -3,7 +3,8 @@
 	<head>
 		<title>Layout Test</title>
 		<link rel="stylesheet" href="test.css" />
-		<script type="text/javascript" src="test.js"></script>
+		<!--<script type="text/javascript" src="test.js"></script>-->
+		<script type="text/javascript" src="EmployeeDetailsNew1.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -19,12 +20,19 @@
 			</div>
 			<div class="mainContent">
 				<script>
-					var p =new P_emp("amol", 1200);
+					/*var p =new P_emp("amol", 1200);
 					var t= new T_emp("Prince", 1500);
 					console.log(p);
 					document.write(p);	
 					document.write(t);
-					console.log(t);
+					console.log(t);*/
+
+					var permanentEmployee = new PermanentEmployee("Varun", 10000);
+					var temporaryEmployee = new TemporaryEmployee("Varun Temp", 5000);
+					console.log(permanentEmployee);
+					document.write(permanentEmployee);
+					console.log(temporaryEmployee);
+					document.write(temporaryEmployee)
 				</script>
 			</div>
 		</div>
