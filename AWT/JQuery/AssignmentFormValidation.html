@@ -2,6 +2,7 @@
 
 <head>
     <title>Validation Using jQuery</title>
+    <link rel="stylesheet" href="AssignmentFormValidation.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script>
         $(document).ready(function () {
@@ -21,7 +22,12 @@
             $("#pinNumberInput").change(function () {
                 validatePin();
             });
-            $("#registrationForm").submit(function(event) {
+
+            $("input[type='reset']").on("click", function () {
+                resetSpans();
+            });
+
+            $("#registrationForm").submit(function (event) {
                 //alert("Submit called");
                 if (submitData()) {
                     return;
@@ -117,23 +123,27 @@
 </head>
 
 <body>
-
-    <body>
-        <form id="registrationForm" onreset="resetSpans();" action="1.html">
+    <div class="container">
+        <form id="registrationForm" action="1.html">
+            <label for="email">Email: </label>
             <input type="text" name="email" placeholder="email" id="emailInput" />
             <span id="emailErrorSpan"></span><br>
+            <label for="password">Password: </label>
             <input type="password" name="password" id="passwordInput" placeholder="password" />
             <span id="passwordErrorSpan"></span><br>
+            <label for="reenterPassword">Re-enter Password: </label>
             <input type="password" name="reenterPassword" id="reenterPasswordInput" placeholder="Re-enter Password" />
             <span id="reenterPasswordErrorSpan"></span><br>
+            <label for="mobileNumber">Mobile Number: </label>
             <input type="text" name="mobileNumber" id="mobileNumberInput" placeholder="Mobile Number" />
             <span id="mobileNumberErrorSpan"></span><br>
+            <label for="pinNumber">Pin Number: </label>
             <input type="text" name="pinNumber" id="pinNumberInput" placeholder="PIN Number" />
             <span id="pinNumberErrorSpan"></span><br>
             <input type="submit" value="Submit" /><br>
             <input type="reset" value="Reset" />
         </form>
-    </body>
+    </div>
 </body>
 
 </html>
