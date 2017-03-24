@@ -6,6 +6,9 @@ class Employee {
     }
 
     constructor(name, salary) {
+        if(new.target === Account) {
+            throw new Error("Cannot create object of Abstract class");
+        }
         this._id = Employee.empId();
         this._name = name;
         this._salary = salary;
