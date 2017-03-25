@@ -6,6 +6,7 @@ After the user enters 0 the linked list is displayed
 
 Revision History:
 25-03-2017 (VR): Project Created
+25-03-2017 (VR): Added Destructor, Printing Nodes in Reverse
 *************************************************************************
 */
 //Include Header Files
@@ -20,14 +21,35 @@ public:
 		this->value = value;
 		this->next = NULL;
 	}
+
+	~Node() {
+		cout << "Inside Node Destructor " << value << endl;
+	}
 };
 
 class SingleLinkedList {
 	Node *head, *tail;
+	void printRev(Node *node) {
+		if (!node) {
+			return;
+		}
+		printRev(node->next);
+		cout << node->value << endl;
+	}
 public:
 	SingleLinkedList() {
 		head = NULL;
 		tail = NULL;
+	}
+
+	~SingleLinkedList() {
+		Node *temp;
+		while (head) {
+			temp = head;
+			head = head->next;
+			delete temp;
+			//temp = head;
+		}
 	}
 
 	void addNode(int value) {
@@ -47,6 +69,10 @@ public:
 			cout << current->value << endl;
 		}
 	}
+
+	void printAllRev() {
+		printRev(head);
+	}
 };
 
 void main() {
@@ -59,4 +85,6 @@ void main() {
 	}
 
 	singleLinkedList.printAll();
+	cout << endl << "-------------------Printing in Reverse now--------------------" << endl;
+	singleLinkedList.printAllRev();
 }
