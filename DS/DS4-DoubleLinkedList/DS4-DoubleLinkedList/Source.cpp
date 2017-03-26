@@ -1,10 +1,12 @@
 /*
 Author: Varun Ramani (VR)
 Program: DoubleLinkedList.cpp
-Description: Implementation of Double Linked List 
+Description: Implementation of Double Linked List
 with adding and Deleting nodes
 
-Revision History: 26-03-2017 (VR) Project Created
+Revision History:
+26-03-2017 (VR) Project Created
+26-03-2017 (VR) Added insertAfter, insertBefore, addNodeToFront functions. Renamed addNode to addNodeToBack
 */
 //Include Headers
 #include <iostream>
@@ -17,7 +19,7 @@ public:
 	/*
 	Function: Node
 	Parameters: value
-	Description: Constructor to initialise the Node 
+	Description: Constructor to initialise the Node
 	with the value and next & previous as NULL
 	*/
 	Node(int value) {
@@ -45,10 +47,10 @@ public:
 	/*
 	Function: addNode
 	Parameters: value
-	Description: Add node to linked list with 
+	Description: Add node to linked list with
 	value passed as parameter
 	*/
-	void addNode(int value) {
+	void addNodeToBack(int value) {
 		Node *newNode = new Node(value);
 		if (NULL == head) {
 			head = tail = newNode;
@@ -61,11 +63,23 @@ public:
 		length++;
 	}
 
+	void addNodeToFront(int value) {
+		Node *newNode = new Node(value);
+		if (NULL == head) {
+			head = tail = newNode;
+		}
+		else {
+			newNode->next = head;
+			head->prev = newNode;
+			head = head->prev;
+		}
+	}
+
 	/*
 	Function: getLength
 	Return type: int
 	Parameters: None
-	Description: Returns the length 
+	Description: Returns the length
 	of the Linked List
 	*/
 	int getLength() {
@@ -99,10 +113,10 @@ public:
 	/*
 	Function: deleteNodeWithValue
 	Parameter: value
-	Description: Traverses the Linked List and 
+	Description: Traverses the Linked List and
 	deletes the node with the value passed as parameter if found in the list
 	*/
-	void deleteNodeWithValue(int value) {
+	bool deleteNodeWithValue(int value) {
 		if (head != NULL && tail != NULL) {
 			bool deleted = false;
 			if (head == tail && head->value == value) {
@@ -111,7 +125,7 @@ public:
 				cout << "Node with value " << value << " deleted" << endl;
 				printFrontBack();
 				length--;
-				return;
+				return true;
 			}
 			for (Node *current = head; current; current = current->next) {
 				if (current->value == value) {
@@ -141,20 +155,63 @@ public:
 			if (deleted) {
 				cout << "Node with value " << value << " deleted" << endl;
 				length--;
+				printFrontBack();
+				return true;
 			}
 			else {
 				cout << "Value not found" << endl;
+				return false;
 			}
-			printFrontBack();
 		}
 		else {
 			cout << "Linked List Empty" << endl;
+			return false;
 		}
+	}
+
+	bool insertAfter(int newValue, int value) {
+		for (Node* current = head; current; current = current->next) {
+			if (current->value == value) {
+				if (current->next == NULL) {
+					current->next = new Node(newValue);
+					(current->next)->prev = current;
+					tail = current->next;
+				}
+				else {
+					Node *newNode = new Node(newValue);
+					newNode->next = current->next;
+					newNode->prev = current;
+					(newNode->next)->prev = (newNode->prev)->next = newNode;
+				}
+				return true;
+			}
+		}
+		return false;
+	}
+
+	bool insertBefore(int newValue, int value) {
+		for (Node* current = head; current; current = current->next) {
+			if (current->value == value) {
+				if (current->prev == NULL) {
+					current->prev = new Node(newValue);
+					(current->prev)->next = current;
+					head = current->prev;
+				}
+				else {
+					Node *newNode = new Node(newValue);
+					newNode->prev = current->prev;
+					newNode->next = current;
+					(newNode->next)->prev = (newNode->prev)->next = newNode;
+				}
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/*
 	Function: ~DoubleLinkedList
-	Description: Destructor of linked list which 
+	Description: Destructor of linked list which
 	will in turn call destructor of each nodes
 	*/
 	~DoubleLinkedList() {
@@ -173,7 +230,7 @@ void main() {
 	while (cout << "Enter value to be added(0 to quit): ",
 		cin >> value,
 		value != 0) {
-		doubleLinkedList.addNode(value);
+		doubleLinkedList.addNodeToBack(value);
 	}
 	doubleLinkedList.printFrontBack();
 	doubleLinkedList.printBackToFront();
@@ -186,4 +243,34 @@ void main() {
 			break;
 		}
 	}
+
+	cout << "Enter value to be inserted after: " << endl;
+	cin >> value;
+	int newValue;
+	cout << "Enter value to be inserted: " << endl;
+	cin >> newValue;
+	if (doubleLinkedList.insertAfter(newValue, value)) {
+		cout << "Inserted Successfully" << endl;
+	}
+
+	doubleLinkedList.printFrontBack();
+	doubleLinkedList.printBackToFront();
+
+	cout << "Enter value to be inserted before: " << endl;
+	cin >> value;
+
+	cout << "Enter value to be inserted: " << endl;
+	cin >> newValue;
+	if (doubleLinkedList.insertBefore(newValue, value)) {
+		cout << "Inserted successfully" << endl;
+	}
+
+	while (cout << "Enter value to be added to front(0 to quit): ",
+		cin >> value,
+		value != 0) {
+		doubleLinkedList.addNodeToFront(value);
+	}
+	doubleLinkedList.printFrontBack();
+	doubleLinkedList.printBackToFront();
+
 }
