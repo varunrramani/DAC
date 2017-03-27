@@ -23,20 +23,29 @@ public:
 	}
 
 	bool addToBack(t value) {
-		Node<t> *newNode = new Node<t>(value);
+		/*Node<t> *newNode = new Node<t>(value);
 		newNode->next = tail;
 		newNode->prev = tail->prev;
 		(tail->prev)->next = newNode;
-		tail->prev = newNode;
+		tail->prev = newNode;*/
+		(tail->prev)->next = new Node<t>(value);
+		((tail->prev)->next)->prev = tail->prev;
+		((tail->prev)->next)->next = tail;
+		tail->prev = (tail->prev)->next;
 		return true;
 	}
 
 	bool addToFront(t value) {
-		Node<t> *newNode = new Node<t>(value);
+		/*Node<t> *newNode = new Node<t>(value);
 		newNode->prev = head;
 		newNode->next = head->next;
 		(head->next)->prev = newNode;
-		head->next = newNode;
+		head->next = newNode;*/
+		(head->next)->prev = new Node<t>(value);
+		((head->next)->prev)->next = head->next;
+		((head->next)->prev)->prev = head;
+		head->next = (head->next)->prev;
+		return true;
 	}
 
 	bool insertAfter(t newValue, t value) {
