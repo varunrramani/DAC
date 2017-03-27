@@ -51,11 +51,15 @@ public:
 	bool insertAfter(t newValue, t value) {
 		for (Node<t> *current = head->next; current; current = current->next) {
 			if (current->value == value) {
-				Node<t> *newNode = new Node<t>(newValue);
+				/*Node<t> *newNode = new Node<t>(newValue);
 				newNode->next = current->next;
 				newNode->prev = current;
 				(current->next)->prev = newNode;
-				current->next = newNode;
+				current->next = newNode;*/
+				(current->next)->prev = new Node<t>(newValue);
+				((current->next)->prev)->next = current->next;
+				((current->next)->prev)->prev = current;
+				current->next = (current->next)->prev;
 				return true;
 			}
 		}
@@ -65,11 +69,15 @@ public:
 	bool insertBefore(t newValue, t value) {
 		for (Node<t> *current = tail->prev; current; current = current->prev) {
 			if (current->value == value) {
-				Node<t> *newNode = new Node<t>(newValue);
+				/*Node<t> *newNode = new Node<t>(newValue);
 				newNode->prev = current->prev;
 				newNode->next = current;
 				(current->prev)->next = newNode;
-				current->prev = newNode;
+				current->prev = newNode;*/
+				(current->prev)->next = new Node<t>(newValue);
+				((current->prev)->next)->prev = current->prev;
+				((current->prev)->next)->next = current;
+				current->prev = (current->prev)->next;
 				return true;
 			}
 		}
