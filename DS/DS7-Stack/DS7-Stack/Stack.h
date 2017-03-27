@@ -1,4 +1,4 @@
-#pragma pack(1)
+
 template <class t>
 class Stack {
 	int top, size;
