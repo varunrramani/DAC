@@ -4,7 +4,7 @@
 
 using namespace std;
 void main() {
-	string checkParanthesis = "({[]})";
+	string checkParanthesis = "({[]}))";
 	cout << sizeof(checkParanthesis) << endl;
 	int length = checkParanthesis.size();
 	cout << length << endl;
@@ -12,29 +12,74 @@ void main() {
 	strcpy(chars, checkParanthesis.c_str());
 	Stack<char>charStack(length);
 	char temp;
-	for (int i = 0; i < length; i++) {
-		//cout << chars[i] << endl;
-		switch (chars[i]) {
-		case '(':
-			charStack.push(chars[i]);
-			break;
-		case '{':
-			charStack.push(chars[i]);
-			break;
-		case '[':
-			charStack.push(chars[i]);
-			break;
-		case ')':
-			temp = charStack.peek();
-			if (temp == '(') {
-				continue;
+	try {
+		for (int i = 0; i < length; i++) {
+			//cout << chars[i] << endl;
+			switch (chars[i]) {
+			case '(':
+				cout << "Pushing (" << endl;
+				charStack.push(chars[i]);
+				break;
+			case '{':
+				cout << "Pushing {" << endl;
+				charStack.push(chars[i]);
+				break;
+			case '[':
+				cout << "Pushing [" << endl;
+				charStack.push(chars[i]);
+				break;
+			case ')':
+				try {
+					temp = charStack.peek();
+				}
+				catch (exception e) {
+					throw exception("Missing paranthesis");
+				}
+				cout << "temp is: " << temp << endl;
+				if (temp == '(') {
+					charStack.pop();
+					continue;
+				}
+				else {
+					throw exception("Missing paranthesis");
+				}
+				break;
+			case '}':
+				try {
+					temp = charStack.peek();
+				}
+				catch (exception e) {
+					throw exception("Missing braces");
+				}
+				cout << "temp is: " << temp << endl;
+				if (temp == '{') {
+					charStack.pop();
+					continue;
+				}
+				else {
+					throw exception("Missing Braces");
+				}
+				break;
+			case ']':
+				try {
+					temp = charStack.peek();
+				}
+				catch (exception e) {
+					throw exception("Missing brackets");
+				}
+				cout << "temp is: " << temp << endl;
+				if (temp == '[') {
+					charStack.pop();
+					continue;
+				}
+				else {
+					throw exception("Missing brackets");
+				}
+				break;
 			}
-			else {
-				throw new exception("Missing paranthesis");
-			}
-			break;
-		case '}':
-
 		}
+	}
+	catch (exception e) {
+		cout << e.what() << endl;
 	}
 }

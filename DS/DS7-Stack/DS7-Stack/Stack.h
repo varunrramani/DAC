@@ -24,7 +24,7 @@ public:
 
 	void push(t value) {
 		if (isFull()) {
-			throw "Stack Full";
+			throw exception("Stack Full");
 		}
 		top++;
 		arr[top] = value;
@@ -32,14 +32,14 @@ public:
 
 	t pop() {
 		if (isEmpty()) {
-			throw "Stack Empty";
+			throw exception("Stack Empty");
 		}
 		return arr[top--];
 	}
 
 	t peek() {
 		if (isEmpty()) {
-			throw "Stack Empty";
+			throw exception("Stack Empty");
 		}
 		return arr[top];
 	}
