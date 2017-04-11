@@ -5,10 +5,12 @@ Define a class "VDemo" in which  write  main()  function.
 In the main function create a reference to Vehicle  class referring to any of the sub class. Using this reference, call "start" method.
 */
 interface Vehicle {
+	// Method Declaration
 	void start();
 }
 
 class TwoWheeler implements Vehicle {
+	//Method Definition
 	@Override
 	public void start() {
 		System.out.println("TwoWheeler start");
@@ -16,6 +18,7 @@ class TwoWheeler implements Vehicle {
 }
 
 class ThreeWheeler implements Vehicle {
+	//Method Definition
 	@Override
 	public void start() {
 		System.out.println("ThreeWheeler start");
@@ -23,6 +26,7 @@ class ThreeWheeler implements Vehicle {
 }
 
 class FourWheeler implements Vehicle {
+	//Method Definition
 	@Override
 	public void start() {
 		System.out.println("FourWheeler start");
