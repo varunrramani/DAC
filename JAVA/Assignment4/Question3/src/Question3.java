@@ -12,10 +12,22 @@ class SynchronisedDemo implements Runnable {
 	@Override
 	synchronized public void run() {
 		// TODO Auto-generated method stub
-		for (int i = 0; i < 6; i++) {
-			System.out.println("Exec " + i);
+		synchronized (this) {
+			for (int i = 0; i < 6; i++) {
+				System.out.println("Exec " + i);
+			}
 		}
 	}
+	
+	/*@Override
+	 synchronized  public void run() {
+		// TODO Auto-generated method stub
+		synchronized (this) {
+			for (int i = 0; i < 6; i++) {
+				System.out.println("Exec " + i);
+			}
+		}
+	}*/
 
 }
 
