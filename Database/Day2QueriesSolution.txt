@@ -1,0 +1,11 @@
+4)
+select salespeople.snum, sname, orders.odate, max(amt) 
+from orders join salespeople on orders.snum=salespeople.snum 
+group by salespeople.snum, sname, orders.odate 
+order by odate;
+
+6)
+select distinct sname from orders join salespeople on orders.snum=salespeople.snum;
+
+7)
+select sname, cname from customers join salespeople on customers.snum=salespeople.snum;
