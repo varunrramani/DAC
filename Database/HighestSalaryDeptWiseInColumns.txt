@@ -1,0 +1,6 @@
+mysql> select * from (select ename, salary as Salary1 from emp join dept on emp.deptid=dept.deptid and deptname='HR' order by salary desc limit 1) as t1, (select ename, salary as Salary2 from emp join dept on emp.deptid=dept.deptid and deptname='IT' order by salary desc limit 1) as t2, (select ename, salary as Salary3 from emp join dept on emp.deptid=dept.deptid and deptname='Finance' order by salary desc limit 1) as t3;
++-------+---------+-------+---------+-------+---------+
+| ename | Salary1 | ename | Salary2 | ename | Salary3 |
++-------+---------+-------+---------+-------+---------+
+| x     |   28222 | b8    |    4532 | w     |   20001 |
++-------+---------+-------+---------+-------+---------+

@@ -1,0 +1,49 @@
+delimiter $$
+
+create function fibonacciSeries(numbers int)
+
+returns varchar(255)
+
+begin
+
+declare i1 int;
+
+declare i2 int;
+
+declare i3 int;
+
+declare ite int;
+
+declare series varchar(255) default '';
+
+set i1 = 0;
+
+set i2 = 1;
+
+set i3 = 1;
+
+set ite = 1;
+
+set series = concat(series, i1,i2);
+
+while ite<=numbers
+
+do
+
+#select i1, i2;
+
+set i3 = i1 + i2;
+
+set series = concat(series, i3);
+
+set i1 = i2;
+
+set i2 = i3;
+
+set ite = ite + 1;
+
+end while;
+
+return series;
+
+end

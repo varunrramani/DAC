@@ -785,3 +785,148 @@ mysql> select distinct sname, comm from salespeople s join customers c on s.snum
 +-------+------+
 | Peel  | 0.12 |
 +-------+------+
+
+71)
+mysql> select * from salespeople s where city != any(select c.city from customers c join salespeople s1 on s1.snum=c.snum and c.city = s1.city);
++------+---------+-----------+------+
+| snum | sname   | city      | comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1002 | Serres  | San Jose  | 0.13 |
+| 1003 | AlexRod | New York  |  0.1 |
+| 1004 | Motika  | London    | 0.11 |
+| 1005 | Fran    | London    | 0.26 |
+| 1007 | Rifkin  | Barcelona | 0.15 |
++------+---------+-----------+------+
+
+73)
+mysql> select c.*, s.sname from customers c join salespeople s on s.snum=c.snum and (s.sname='Peel' or s.sname='Motika');
++------+---------+--------+--------+------+--------+
+| cnum | cname   | city   | rating | snum | sname  |
++------+---------+--------+--------+------+--------+
+| 2001 | Hoffman | London |    100 | 1001 | Peel   |
+| 2006 | Clemens | London |    100 | 1001 | Peel   |
+| 2007 | Pereira | Rome   |    100 | 1004 | Motika |
++------+---------+--------+--------+------+--------+
+
+74)
+mysql> select count(distinct o.snum) as SalesPeople from orders o;
++-------------+
+| SalesPeople |
++-------------+
+|           5 |
++-------------+
+
+75)
+mysql> select o.* from orders o join salespeople s on o.snum=s.snum and s.city='London';
++------+---------+------------+------+------+
+| ONUM | AMT     | ODATE      | CNUM | SNUM |
++------+---------+------------+------+------+
+| 3003 |  767.19 | 1996-10-03 | 2001 | 1001 |
+| 3008 |    4723 | 1996-10-05 | 2006 | 1001 |
+| 3011 | 9891.88 | 1996-10-06 | 2006 | 1001 |
+| 3002 |  1900.1 | 1996-10-03 | 2007 | 1004 |
++------+---------+------------+------+------+
+
+76)
+mysql> select o.* from orders o join customers c join salespeople s on o.snum=s.snum and o.cnum=c.cnum and c.city!=s.city;
++------+---------+------------+------+------+
+| ONUM | AMT     | ODATE      | CNUM | SNUM |
++------+---------+------------+------+------+
+| 3010 | 1309.95 | 1996-10-06 | 2004 | 1002 |
+| 3009 | 1713.23 | 1996-10-04 | 2002 | 1003 |
+| 3007 |   75.75 | 1996-10-04 | 2002 | 1003 |
+| 3002 |  1900.1 | 1996-10-03 | 2007 | 1004 |
+| 3001 |   18.69 | 1996-10-03 | 2008 | 1007 |
+| 3006 | 1098.16 | 1996-10-03 | 2008 | 1007 |
++------+---------+------------+------+------+
+
+77)
+mysql> select s.* from salespeople s join customers c join orders o on s.snum=c.snum and o.snum=s.snum and o.cnum=c.cnum group by o.cnum having count(o.cnum)>1;
++------+---------+-----------+------+
+| snum | sname   | city      | comm |
++------+---------+-----------+------+
+| 1003 | AlexRod | New York  |  0.1 |
+| 1001 | Peel    | London    | 0.12 |
+| 1007 | Rifkin  | Barcelona | 0.15 |
++------+---------+-----------+------+
+
+78)
+mysql> select c.* from customers c join salespeople s join orders o on c.snum=s.snum and c.cnum=o.cnum and s.snum=o.snum group by o.cnum having count(o.cnum)>1;
++------+----------+----------+--------+------+
+| cnum | cname    | city     | rating | snum |
++------+----------+----------+--------+------+
+| 2002 | Giovani  | Rome     |    200 | 1003 |
+| 2006 | Clemens  | London   |    100 | 1001 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
++------+----------+----------+--------+------+
+
+79)
+mysql> select * from customers where cname like 'C%';
++------+----------+----------+--------+------+
+| cnum | cname    | city     | rating | snum |
++------+----------+----------+--------+------+
+| 2006 | Clemens  | London   |    100 | 1001 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
++------+----------+----------+--------+------+
+
+80)
+mysql> select concat('For the city: ', city, ' the highest rating is: ', max(rating)) result from customers group by city;
++---------------------------------------------------+
+| result                                            |
++---------------------------------------------------+
+| For the city: Berlin the highest rating is: 300   |
+| For the city: London the highest rating is: 100   |
+| For the city: Rome the highest rating is: 200     |
+| For the city: San Jose the highest rating is: 300 |
++---------------------------------------------------+
+
+81)
+mysql> select distinct snum from orders;
++------+
+| snum |
++------+
+| 1001 |
+| 1002 |
+| 1003 |
+| 1004 |
+| 1007 |
++------+
+
+82)
+mysql> select rating, cname as name, cnum from customers order by rating desc;
++--------+----------+------+
+| rating | name     | cnum |
++--------+----------+------+
+|    300 | Grass    | 2004 |
+|    300 | Cisneros | 2008 |
+|    200 | Giovani  | 2002 |
+|    200 | Liu      | 2003 |
+|    100 | Hoffman  | 2001 |
+|    100 | Clemens  | 2006 |
+|    100 | Pereira  | 2007 |
++--------+----------+------+
+
+83)
+mysql> select city, avg(comm) from salespeople where city='London' group by city;
++--------+---------------------+
+| city   | avg(comm)           |
++--------+---------------------+
+| London | 0.16333332906166712 |
++--------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> select city, avg(comm) from salespeople group by city having city='London';
++--------+---------------------+
+| city   | avg(comm)           |
++--------+---------------------+
+| London | 0.16333332906166712 |
++--------+---------------------+
+
+100)
+mysql> select (case when (select cnum from (select cnum, count(onum) count from orders group by cnum order by count desc, cnum limit 1) as t)=(select cnum from customers group by cnum having max(rating) limit 1) then 'True'else'False' end) 'Highest Rating'from customers limit 1;
++----------------+
+| Highest Rating |
++----------------+
+| False          |
++----------------+

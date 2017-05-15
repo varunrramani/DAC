@@ -1,0 +1,39 @@
+delimiter $$
+
+create procedure fibonacciSeries(numbers int)
+
+begin
+
+declare i1 int;
+
+declare i2 int;
+
+declare i3 int;
+
+declare ite int;
+
+set i1 = 0;
+
+set i2 = 1;
+
+set i3 = 1;
+
+set ite = 1;
+
+while ite<=numbers
+
+do
+
+select i1, i2;
+
+set i3 = i1 + i2;
+
+set i1 = i2;
+
+set i2 = i3;
+
+set ite = ite + 1;
+
+end while;
+
+end$$
