@@ -1,0 +1,42 @@
+delimiter $$
+
+create procedure checkPrime(number int)
+
+begin
+
+
+declare i int default 2;
+
+declare flag int default 0;
+
+while i <= number/2 and flag = 0
+
+do
+
+if (mod(number, i) = 0) then
+	
+set flag = 1;
+
+end if;
+
+set i=i+1;
+
+if i=number/2 then
+	
+set flag = 2;
+
+end if;
+
+end while;
+
+if flag = 1 then
+	
+select 'false' as 'Is Prime';
+
+else
+	
+select 'true' as 'Is Prime';
+
+end if;
+
+end
