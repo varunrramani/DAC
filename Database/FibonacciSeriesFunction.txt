@@ -24,7 +24,7 @@ set i3 = 1;
 
 set ite = 1;
 
-set series = concat(series, i1,i2);
+set series = concat(series, i1, ' ',i2);
 
 while ite<=numbers
 
@@ -34,7 +34,7 @@ do
 
 set i3 = i1 + i2;
 
-set series = concat(series, i3);
+set series = concat(series, ' ', i3);
 
 set i1 = i2;
 
