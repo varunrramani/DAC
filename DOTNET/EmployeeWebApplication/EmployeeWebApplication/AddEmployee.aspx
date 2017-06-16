@@ -1,16 +1,24 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddEmployee.aspx.cs" Inherits="EmployeeWebApplication.AddEmployee" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Employees.Master" AutoEventWireup="true" CodeBehind="AddEmployee.aspx.cs" Inherits="EmployeeWebApplication.AddEmployee" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Label ID="lblId" Text="Id: " runat="server" />
+    <asp:TextBox ID="txtEmployeeId" runat="server" /><br />
+    <br />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>
+    <asp:Label ID="lblName" Text="Name: " runat="server" />
+    <asp:TextBox ID="txtEmployeeName" runat="server" /><br />
+    <br />
+
+    <asp:Label ID="lblSalary" Text="Salary: " runat="server" />
+    <asp:TextBox ID="txtEmployeeSalary" runat="server" />
+    <br />
+    <br />
+    <asp:Button ID="btnAddEmployee" Text="Add Employee" runat="server" OnClick="btnAddEmployee_Click" />
+
+    <asp:RequiredFieldValidator ControlToValidate="txtEmployeeId" ErrorMessage="Employee ID is Required" ForeColor="Red" runat="server" />
+    <asp:RequiredFieldValidator ControlToValidate="txtEmployeeName" ErrorMessage="Employee Name is Required" ForeColor="Red" runat="server" />
+    <asp:RequiredFieldValidator ControlToValidate="txtEmployeeSalary" ErrorMessage="Employee Salary is Required" ForeColor="Red" runat="server" />
+    <asp:RegularExpressionValidator ControlToValidate="txtEmployeeSalary" ErrorMessage="Salary should be a number" runat="server" ValidationExpression="^[0-9]*$" ForeColor="Red" />
+</asp:Content>

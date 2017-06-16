@@ -13,5 +13,23 @@ namespace EmployeeWebApplication
         {
 
         }
+
+        protected void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            String employeeName = txtEmployeeName.Text;
+            Double salary;
+            bool isValid = double.TryParse(txtEmployeeSalary.Text, out salary);
+
+            int id;
+            isValid = int.TryParse(txtEmployeeId.Text, out id);
+
+            Employee employee = new Employee(id, employeeName, salary);
+            BusinessLayer b = new BusinessLayer();
+            int result = b.InsertData(employee);
+            if (result == 1)
+            {
+                Response.Write(result + " Rows Affected");
+            }
+        }
     }
 }

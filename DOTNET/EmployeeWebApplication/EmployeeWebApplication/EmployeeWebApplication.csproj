@@ -66,7 +66,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddEmployee.aspx" />
+    <Content Include="DeleteEmployee.aspx" />
+    <Content Include="DisplayEmployees.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Employees.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,7 +79,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddEmployee.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -88,7 +91,28 @@
       <DependentUpon>AddEmployee.aspx</DependentUpon>
     </Compile>
     <Compile Include="BusinessLayer.cs" />
+    <Compile Include="DeleteEmployee.aspx.cs">
+      <DependentUpon>DeleteEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteEmployee.aspx.designer.cs">
+      <DependentUpon>DeleteEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayEmployees.aspx.cs">
+      <DependentUpon>DisplayEmployees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisplayEmployees.aspx.designer.cs">
+      <DependentUpon>DisplayEmployees.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs" />
+    <Compile Include="Employees.Master.cs">
+      <DependentUpon>Employees.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employees.Master.designer.cs">
+      <DependentUpon>Employees.Master</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
